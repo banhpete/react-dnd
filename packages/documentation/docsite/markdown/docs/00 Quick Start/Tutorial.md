@@ -570,9 +570,8 @@ In my collecting function I'm going to ask the monitor whether the pointer is cu
 const [{ isOver, canDrop }, drop] = useDrop({
   accept: ItemTypes.KNIGHT,
   drop: () => moveKnight(x, y),
-  collect: (mon) => ({
-    isOver: !!mon.isOver(),
-    canDrop: !!mon.canDrop()
+  collect: monitor => ({
+    isOver: !!monitor.isOver(),
   })
 })
 ```
